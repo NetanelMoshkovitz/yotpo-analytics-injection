@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+ruby "2.1.1"
+gem 'mysql2'
+gem 'unicorn'
+gem 'sinatra'
+gem "sinatra-activerecord"
+gem 'activerecord'
+gem 'sinatra-graph'
+gem 'rest-client'
+#gem 'activerecord-mysql2-adapter'
