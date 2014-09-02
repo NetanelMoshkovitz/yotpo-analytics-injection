@@ -28,8 +28,14 @@ class App < Sinatra::Application
     #"#{User.last.email}"
     last_id1=Purchase.last.id.to_i
     last_id2=ConversionOrder.last.id.to_i
-    i=rand(last_id1)
-    j=rand(last_id2)
+    i=0
+    j=0
+    until Purchase.where(:id=>i).first!=nil
+      i=rand(last_id1)
+    end
+    until ConversionOrder.where(:id=>j).first!=nil
+      j=rand(last_id2)
+    end
     @purchase=Purchase.find(i)
     @conversion_order=ConversionOrder.find(j)
     values   = {:data =>
