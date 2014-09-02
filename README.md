@@ -1,21 +1,15 @@
 Nginx, Unicorn & Sinatra
 ========================
-This is an example of how to deploy a simple Sinatra application using Unicorn 
-and Nginx. Dynamic content is served via Unicorn while static content is served
-via Nginx.
+These are the stages:
 
-__Remember to edit all files paths in nginx.conf and unicorn.rb!__
+1. bundle install
 
-`apt-get install nginx` / `yum install nginx` / `emerge -av nginx`
+2. mkdir -p tmp/pids
 
-`bundle install`
+3. mkdir -p tmp/sockets/
 
-`mkdir -p tmp/pids/`
+4. cp config/sinatra.yotpo.com.conf /Users/netanel/tools/nginx-srv/conf/sites-enabled/sinatra.yotpo.com.conf
 
-`mkdir -p tmp/sockets/`
+5. restart nginx
 
-`cp config/nginx.conf /etc/nginx/nginx.conf`
-
-`service nginx start` / `/etc/init.d/nginx start`
-
-`unicorn -c config/unicorn.rb`
+6. unicorn -c config/unicorn.rb -p 4567 -D
