@@ -6,13 +6,6 @@ require 'active_record'
 require 'yaml'
 require 'rest_client'
 
-# ActiveRecord::Base.establish_connection(
-#     :adapter  => "mysql2",
-#     :host     => "localhost",
-#     :username => "root",
-#     :password => "vladopen",
-#     :database => "yotpoapistaging"
-# )
 DB_CONFIG = YAML::load(File.open('config/database.yml'))
 
 set :database_file, "config/database.yml"
